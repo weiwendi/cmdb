@@ -110,7 +110,7 @@ Please review the [Salesforce Marketing Cloud style guide](https://github.com/Ex
 
 Be sure to add unit tests for any new or changed functionality.
 
-To serve the test page and lint your changes run `grunt serve` while developing. View the test page at [http://0.0.0.0:8000/test/](http://0.0.0.0:8000/test/). The `serve` task will run lint and unit tests against saved code.
+To serve the test page and lint your changes run `grunt serve` while developing. View the test page at [http://localhost:8000/test/](http://localhost:8000/test/). The `serve` task will run lint and unit tests against saved code.
 
 While grunt can run the included unit tests via PhantomJS, this isn't a substitute for running tests across a variety of browsers and environments. Please be sure to test in as many of the browsers listed in `sauce_browsers.yml` as you can before contributing.
 

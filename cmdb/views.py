@@ -251,14 +251,13 @@ def import_data(request, model):
                                             cpu=facter_message['cpu'],
                                             admin=user_id,
                                             memo=facter_message['memo'],
-                                            lab=None,
                     )
                     try:
                         # 保存
                         import_sql.save()
                     except Exception, e:
                         return e
-                # 如果有了，查询数据，且信息不对则更新
+                # 如果有了，查询数据，切信息不对则更新
                 elif not model_name.objects.filter(name=name,
                                                    sn=facter_message['sn'],
                                                    public_ip=facter_message['public_ip'],

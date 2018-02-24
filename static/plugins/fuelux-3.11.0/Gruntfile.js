@@ -59,17 +59,17 @@ module.exports = function (grunt) {
 		// TEST URLS
 		allTestUrls: ['2.1.0', '1.11.0', '1.9.1', 'browserGlobals', 'noMoment', 'codeCoverage' ].map(function (type) {
 			if (type === 'browserGlobals') {
-				return 'http://0.0.0.0:<%= connect.testServer.options.port %>/test/browser-globals.html';
+				return 'http://localhost:<%= connect.testServer.options.port %>/test/browser-globals.html';
 			}
 			else if (type === 'codeCoverage') {
-				return 'http://0.0.0.0:<%= connect.testServer.options.port %>/test/?coverage=true';
+				return 'http://localhost:<%= connect.testServer.options.port %>/test/?coverage=true';
 			}
 			else if (type === 'noMoment') {
-				return 'http://0.0.0.0:<%= connect.testServer.options.port %>/test/?no-moment=true';
+				return 'http://localhost:<%= connect.testServer.options.port %>/test/?no-moment=true';
 			}
 			else {
 				// test dist with multiple jQuery versions
-				return 'http://0.0.0.0:<%= connect.testServer.options.port %>/test/?testdist=true';
+				return 'http://localhost:<%= connect.testServer.options.port %>/test/?testdist=true';
 			}
 		}),
 
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
 		blanket_qunit: {
 			source: {
 				options: {
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/?coverage=true&gruntReport'],
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/?coverage=true&gruntReport'],
 					threshold: 1,
 					globalThreshold: 1
 				}
@@ -273,24 +273,24 @@ module.exports = function (grunt) {
 			},
 			globals: {
 				options: {
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/browser-globals.html']
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/browser-globals.html']
 				}
 			},
 			noMoment: {
 				options: {
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/?no-moment=true']
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/?no-moment=true']
 				}
 			},
 			// `grunt qunit:source` will test the source files directly.
 			source: {
 				options: {
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/']
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/']
 				}
 			},
 			dist: {
 				options: {
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/?testdist=true', 
-						'http://0.0.0.0:<%= connect.testServer.options.port %>/test/commonjs.html']
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/?testdist=true', 
+						'http://localhost:<%= connect.testServer.options.port %>/test/commonjs.html']
 				}
 			}
 		},
@@ -549,7 +549,7 @@ module.exports = function (grunt) {
 					browsers: grunt.file.readYAML('sauce_browsers_tricky.yml'),
 					build: process.env.TRAVIS_BUILD_NUMBER || '<%= pkg.version %>',
 					testname: process.env.TRAVIS_JOB_ID || Math.floor((new Date()).getTime() / 1000 - 1230768000).toString(),
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/?testdist=true']
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/?testdist=true']
 				}
 			},
 			defaultBrowsers: {
@@ -562,7 +562,7 @@ module.exports = function (grunt) {
 					browsers: grunt.file.readYAML('sauce_browsers.yml'),
 					build: process.env.TRAVIS_BUILD_NUMBER || '<%= pkg.version %>',
 					testname: process.env.TRAVIS_JOB_ID || '<%= pkg.version %>-<%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %>',
-					urls: ['http://0.0.0.0:<%= connect.testServer.options.port %>/test/?testdist=true'],
+					urls: ['http://localhost:<%= connect.testServer.options.port %>/test/?testdist=true'],
 					maxPollRetries: 4,
 					throttled: 3,
 					maxRetries: 3

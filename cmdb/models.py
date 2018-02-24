@@ -85,8 +85,6 @@ class Server_Device(models.Model):
     public_ip = models.CharField(u'外网IP', max_length=200, blank=True)
     # 私网IP，可以为空
     private_ip = models.CharField(u'内网IP', max_length=200, blank=True)
-    # 标签分组，便于代码发布
-    #lab = models.CharField(u'标签', max_length=200, blank=True)
     # 定义mac地址字段
     mac = models.CharField(u'MAC地址', max_length=200, blank=True)
     # 定义操作系统字段

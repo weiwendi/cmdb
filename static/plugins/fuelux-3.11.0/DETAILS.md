@@ -102,7 +102,7 @@ Run `grunt --help` or [check out the Gruntfile](https://github.com/ExactTarget/f
 Runs JSHint and full suite of QUnit tests.
 
 #### Serving - `grunt serve`
-Starts a watch server for automated javascript validation and basic tests (JSHint, simplified QUnit) allowing for visual review of tests at http://0.0.0.0:8000/test/.
+Starts a watch server for automated javascript validation and basic tests (JSHint, simplified QUnit) allowing for visual review of tests at http://localhost:8000/test/.
 
 #### Compiling - `grunt release`
 _If you have forked the repo for personal use, you will also find this task useful._

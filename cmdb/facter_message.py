@@ -31,6 +31,7 @@ result_list = ['name',
                'role',
                'status',
                'admin',
+               'lab',
                'memo']
 
 # db对应的facter字段,需要取其他的字段可以一一对应
