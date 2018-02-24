@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf8
-__authors__ = ['liuyu', 'chenlijun']
-__version__ = 1.0
-__date__ = '2015-09-06 14:58:23'
-__licence__ = 'GPL licence'
 
 # 导入模块
 import yaml
