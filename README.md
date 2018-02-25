@@ -8,8 +8,12 @@ Open-cmdb是基于Python2.7、Django1.7、Puppet开发的一套快速将服务�
 
 如果环境中已有Puppet，此系统能快速接入，否则需要自行配置Puppet环境。目前暂时不支持Ansible的YAML格式。
 
-## 环境依赖
+# 环境依赖
 
 * Python2.7
 * Django1.7
 
+# 启动
+* yum install -y screen
+* screen
+* python manage.py runserver 0.0.0.0:80 &
